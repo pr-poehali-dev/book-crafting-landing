@@ -92,24 +92,32 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-background via-accent/30 to-background px-6 py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-background via-accent/20 to-background px-6 py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/30 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-5xl mx-auto text-center relative z-10 animate-fade-in">
+          <div className="mb-10 flex justify-center">
+            <img 
+              src="https://cdn.poehali.dev/files/48b86d98-83f0-4d48-8417-12596e5179f0.jpg" 
+              alt="BookBox Logo" 
+              className="w-48 h-48 object-contain drop-shadow-2xl"
+            />
+          </div>
           <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-8 leading-tight">
-            Создай настоящую книгу<br />из своего текста
+            Руки помнят бумагу.<br />Создай то, что переживёт экран
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto font-light">
             Мобильный набор с материалами и видео-инструкциями для создания<br />печатной книги своими руками
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="text-lg px-8 py-6 rounded-full hover:scale-105 transition-transform">
+            <Button size="lg" className="text-lg px-8 py-6 rounded-full hover:scale-105 transition-transform shadow-lg shadow-primary/30">
               Создать свою книгу
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full hover:scale-105 transition-transform">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full hover:scale-105 transition-transform border-2 border-secondary hover:bg-secondary hover:text-white">
               Подписаться на уроки
             </Button>
           </div>
@@ -142,7 +150,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <Card key={index} className="border-2 hover:border-primary transition-all hover:shadow-lg group animate-fade-in" style={{ animationDelay: `${index * 0.1}s`, opacity: 0, animationFillMode: 'forwards' }}>
+              <Card key={index} className="border-2 hover:border-primary transition-all hover:shadow-xl hover:shadow-primary/20 group animate-fade-in" style={{ animationDelay: `${index * 0.1}s`, opacity: 0, animationFillMode: 'forwards' }}>
                 <CardContent className="pt-8 pb-8 text-center">
                   <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon name={step.icon} size={32} className="text-primary" />
@@ -168,8 +176,8 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {kitItems.map((item, index) => (
-              <div key={index} className="flex items-start gap-4 p-6 rounded-2xl bg-card hover:bg-accent/50 transition-colors animate-fade-in" style={{ animationDelay: `${index * 0.1}s`, opacity: 0, animationFillMode: 'forwards' }}>
-                <div className="w-10 h-10 flex-shrink-0 bg-primary/10 rounded-full flex items-center justify-center">
+              <div key={index} className="flex items-start gap-4 p-6 rounded-2xl bg-card hover:bg-secondary/10 hover:border-2 hover:border-secondary/30 transition-all animate-fade-in" style={{ animationDelay: `${index * 0.1}s`, opacity: 0, animationFillMode: 'forwards' }}>
+                <div className="w-10 h-10 flex-shrink-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
                   <Icon name={item.icon} size={20} className="text-primary" />
                 </div>
                 <p className="text-foreground leading-relaxed">{item.text}</p>
