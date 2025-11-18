@@ -274,7 +274,7 @@ const Index = () => {
             
             <div className="text-center border-t-2 border-primary/20 pt-10">
               <div className="mb-6">
-                <span className="text-6xl font-serif font-bold text-primary">990₽</span>
+                <span className="text-6xl font-serif font-bold text-primary">250₽</span>
                 <span className="text-xl text-muted-foreground ml-2">в месяц</span>
               </div>
               <Button size="lg" className="text-lg px-12 py-7 rounded-none border-2 border-primary hover:scale-105 transition-all shadow-lg">
