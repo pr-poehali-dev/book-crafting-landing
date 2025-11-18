@@ -18,8 +18,8 @@ export default {
 			}
 		},
 		fontFamily: {
-			sans: ['Alegreya Sans', 'sans-serif'],
-			serif: ['Cormorant', 'serif'],
+			sans: ['EB Garamond', 'serif'],
+			serif: ['Playfair Display', 'serif'],
 		},
 		extend: {
 			colors: {

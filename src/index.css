@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Alegreya+Sans:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=EB+Garamond:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,31 +6,31 @@
 
 @layer base {
   :root {
-    --background: 150 15% 98%;
-    --foreground: 168 35% 25%;
+    --background: 40 35% 94%;
+    --foreground: 30 20% 20%;
 
-    --card: 150 20% 96%;
+    --card: 40 40% 97%;
     --card-foreground: 168 35% 25%;
 
     --popover: 150 20% 96%;
     --popover-foreground: 168 35% 25%;
 
-    --primary: 168 60% 42%;
+    --primary: 168 50% 35%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 55% 55%;
+    --secondary: 270 45% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 150 15% 92%;
+    --muted: 40 25% 88%;
     --muted-foreground: 168 20% 45%;
 
-    --accent: 270 65% 92%;
+    --accent: 35 45% 88%;
     --accent-foreground: 168 35% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 150 20% 88%;
+    --border: 30 25% 75%;
     --input: 150 20% 88%;
     --ring: 168 60% 42%;
 
@@ -99,7 +99,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Alegreya Sans", sans-serif;
+    font-family: "EB Garamond", serif;
   }
 
   h1,
@@ -108,6 +108,53 @@
   h4,
   h5,
   h6 {
-    font-family: "Cormorant", serif;
+    font-family: "Playfair Display", serif;
+  }
+
+  .vintage-texture {
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 3px
+      );
+  }
+
+  .paper-texture {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .ornament {
+    position: relative;
+  }
+
+  .ornament::before,
+  .ornament::after {
+    content: "❦";
+    position: absolute;
+    font-size: 2rem;
+    color: hsl(var(--primary));
+    opacity: 0.3;
+  }
+
+  .ornament::before {
+    left: -3rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .ornament::after {
+    right: -3rem;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
   }
 }
